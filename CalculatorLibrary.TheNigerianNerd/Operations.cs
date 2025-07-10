@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 
+
 namespace CalculatorLibrary.TheNigerianNerd
 {
     public enum OperationType
@@ -8,9 +9,12 @@ namespace CalculatorLibrary.TheNigerianNerd
         Addition,
         Subtraction,
         Multiplication,
-        Divison
+        Divison,
+        SquareRoot,
+        Power,
+        List
     }
-    internal class Operation
+    internal class Operations
     {
         // Properties to hold the operands and the operation type.
         public double Operand1 { get; set; }
@@ -19,7 +23,7 @@ namespace CalculatorLibrary.TheNigerianNerd
         public double Result { get; set; }
 
         // Constructor to initialize the properties.
-        public Operation(double num1, double num2, OperationType operation, double result)
+        public Operations(double num1, double num2, OperationType operation, double result)
         {
             Operand1 = num1;
             Operand2 = num2;

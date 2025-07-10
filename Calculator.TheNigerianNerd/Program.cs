@@ -43,16 +43,19 @@ class Program
 
             // Ask the user to choose an operator.
             Console.WriteLine("Choose an operator from the following list:");
-            Console.WriteLine("\ta - Add");
-            Console.WriteLine("\ts - Subtract");
-            Console.WriteLine("\tm - Multiply");
-            Console.WriteLine("\td - Divide");
+            Console.WriteLine($"\ta - {OperationType.Addition}");
+            Console.WriteLine($"\ts - {OperationType.Subtraction}");
+            Console.WriteLine($"\tm - {OperationType.Multiplication}");
+            Console.WriteLine($"\td - {OperationType.Divison}");
+            Console.WriteLine($"\tr - {OperationType.SquareRoot}");
+            Console.WriteLine($"\tp - {OperationType.Power}");
+            Console.WriteLine($"\tl - {OperationType.List}");
+            
             Console.Write("Your option? ");
-
             string? op = Console.ReadLine();
 
             // Validate input is not null, and matches the pattern
-            if (op == null || !Regex.IsMatch(op, "[a|s|m|d]"))
+            if (op == null || !Regex.IsMatch(op, "[a|s|m|d|r|p|l]"))
             {
                 Console.WriteLine("Error: Unrecognized input.");
             }
@@ -81,7 +84,7 @@ class Program
             if (Console.ReadLine() == "l")
             {
                 // List previous operations
-                calculator.ListOperations();
+                calculator.List();
             }
 
             if (Console.ReadLine() == "n") endApp = true;
